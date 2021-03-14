@@ -1,0 +1,37 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="user-dashboard-area">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="user-dashboard-box">
+                        <div class="user-dashboard-sidebar">
+                            <div class="user-box">
+                                <img src="{{request.user.profile_pic.url}}" alt="" class="img-fluid">
+                                <div class="name">
+                                    <div class="name">
+                                        {{ request.user.first_name }} {{ request.user.last_name }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-dashboard-menu">
+                                <ul>
+                                    <li class="active">
+                                        <a href="{% url 'accounts:my-profile' %}">Profile</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="user-dashboard-content">
+                            <div class="content-title-box">
+                                <div class="title">{{user.email}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
